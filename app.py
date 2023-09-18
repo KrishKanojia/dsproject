@@ -1,7 +1,6 @@
 from src.dsproject.logger import logging
 from src.dsproject.exception import CustomException
 from src.dsproject.components.data_ingestion import DataIngestion
-from src.dsproject.components.data_ingestion import DataIngestionConfig
 
 import sys
 
