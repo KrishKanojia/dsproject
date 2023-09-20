@@ -60,9 +60,47 @@ class ModelTrainer:
                 "SVR": SVR(),
                 "CatBoost": CatBoostRegressor(verbose=False),
             }
+
+            param = {
+                "Linear Regression": {},
+                    
+                "Ridge": {
+                    'alpha': [10.0, 100.0, 1000.0],'fit_intercept': [True,False]
+                },
+                
+                "Lasso": {
+                    'alpha': [ 10.0, 100.0, 1000.0],'fit_intercept': [True,False]
+                },
+
+                "KNeigbors":{
+                    'n_neighbors' : [3, 10, 30], 'weights': ['uniform', 'distance']
+                },
+
+                "Decision Tree": {
+                    'max_depth': [2,4,6,8],'max_features': [2,4,6,8], 'splitter': ['best', 'random'],
+                },
+
+                "Random Forest": {
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+
+                "AdaBoost" : {
+                    'n_estimators' : [3,10,30],'learning_rate' : [0.1,0.5,1]
+                },
+
+                "SVR": {
+                    'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],'C': [0.1, 1, 10, 100, 1000]
+                },
+
+                "CatBoost": {
+                    'iterations': [10, 30, 50],'learning_rate': [0.03, 0.1, 0.3],'depth': [4, 6, 8]
+                }
+            }
+
+
             logging.info("Models evaluation started")
             model_report: dict = evaluate_model(X_train= X_train, y_train= y_train, X_test=X_test,
-                                                 y_test=y_test, models= models)
+                                                 y_test=y_test, models= models,params=param)
             
             ## Get best model score
             best_model_score = max(sorted(model_report.values()))
