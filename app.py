@@ -23,7 +23,7 @@ def index():
 @app.route('/predictdata',methods=['GET','POST'])
 def predict_datapoint():
     if request.method == 'GET':
-        return render_template('home.html')
+        return render_template('index.html')
     else:
         data = CustomData(
             gender=request.form.get('gender'),
@@ -42,13 +42,13 @@ def predict_datapoint():
         predict_pipeline = PredictPipeline()
         results = predict_pipeline.predict(data_df)
         print(f"Results: {results}")
-        return render_template('home.html',results=round(results[0],2))
+        return render_template('index.html',results=round(results[0],2))
 
 
 if __name__ == "__main__":
     logging.info("Hello World!")
 
-    app.run(host='0.0.0.0',debug=True)
+    app.run(host='0.0.0.0')
 
     # try:
     #     data_ingestion = DataIngestion()
