@@ -7,4 +7,5 @@ scikit-learn
 seaborn
 catboost==1.1.1
 xgboost
+flask
 # -e .
