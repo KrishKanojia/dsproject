@@ -64,11 +64,29 @@
             color: #333;
             margin-top: 20px;
         }
+        .button-like-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Add hover effect */
+        .button-like-link:hover {
+            background-color: #e8b717;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 style="text-align: center; font-size: 42px; color: #333; margin-top: 30px;">
+        <h1 style="text-align: center; font-size: 42px; color: #333; margin-top: 50px;">
             <legend style="background-color: #007bff; color: #fff; padding: 5px 10px; border-radius: 5px;">Student Exam Performance Indicator</legend>
         </h1>
         <h1 style="text-align: center; font-size: 32px; color: #007bff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; letter-spacing: 2px; margin-top: 20px;">Student Exam Performance Prediction</h1>
@@ -170,6 +188,15 @@
         </form>
 
         <h2>The prediction is {{results}}</h2>
+    </div>
+</body>
+<body>
+    <div class="container">
+        <!-- Added link to the top-left corner -->
+        <a href="https://github.com/KrishKanojia/dsproject" class="button-like-link">Repository Link</a>
+
+        <!-- Rest of your HTML content here -->
+        <!-- ... -->
     </div>
 </body>
 </html>

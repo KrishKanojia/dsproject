@@ -48,7 +48,7 @@ def predict_datapoint():
 if __name__ == "__main__":
     logging.info("Hello World!")
 
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',debug=True)
 
     # try:
     #     data_ingestion = DataIngestion()
